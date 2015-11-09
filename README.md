@@ -6,7 +6,7 @@ The Fermi-Hubbard model we are concerned with here is defined on some lattice is
 
 ![The Fermi-Hubbard Hamiltonian](https://raw.githubusercontent.com/georglind/fermihubbard/master/figs/fermihubbard.png "The Fermi-Hubbard Hamiltonian")
 
-Here the sum runs over the lattice indices and spin components (up and down), and the operator `c(i)` annihilates a particle on site `i`. Here the `n(i)` operator--appearing in the definition of the interaction operator--counts the total number of particles on site `i`. 
+Here the sum runs over the lattice indices and spin components (up and down), and the operator c<sub>i</sub> annihilates a particle on site `i`. Here the n<sub>i</sub> operator&mdash;appearing in the definition of the interaction operator&mdash;counts the total number of particles on site `i`. 
 
 This library **requires** `numpy` and `scipy` installed on your system.
 
