@@ -1,14 +1,14 @@
 # fermihubbard
 
-This is a lite python library to generate the basis and many-body Hamiltonian for the Fermi-Hubbard model.
+This is a small python library to generate the basis and many-body Hamiltonian for the Fermi-Hubbard model.
 
-The Fermi-Hubbard model on some lattice is described by the Hamiltonian,
+The Fermi-Hubbard model we are concerned with here is defined on some lattice is described by the Hamiltonian,
 
 ![The Fermi-Hubbard Hamiltonian](https://raw.githubusercontent.com/georglind/fermihubbard/master/figs/fermihubbard.png "The Fermi-Hubbard Hamiltonian")
 
-Here the sum runs over the lattice indices, and as is normal the operator `c(i)` annihilates a particle on site `i`. 
+Here the sum runs over the lattice indices and spin components, and as is normal the operator `c(i)` annihilates a particle on site `i`. Here the `n(i)` operator counts the total number of particles on site `i`. 
 
-This library requires `numpy` and `scipy` installed on your system.
+This library **requires** `numpy` and `scipy` installed on your system.
 
 ## How to use it?
 
@@ -23,16 +23,16 @@ import fermihubbard
 
 # The model parameters:
 
-# The onsite energies (0)
+# The onsite energies (all zero)
 H1E = np.zeros((4, 4))
 
-# Hopping on a ring
+# Hopping on a ring (amplitude t = -1)
 H1T = np.zeros((4, 4))
 for i in xrange(4):
     H1T[i, (i+1) % 4] = -1.
     H1T[(i+1) % 4, i] = -1.
 
-# Only onsite interaction at strength 2
+# Interaction (her onsite only at U = 2)
 H1U = 2*np.eye(4)
 
 # Construc the model
@@ -143,4 +143,6 @@ print(HU + HT)
 #   (35, 34)  -1.0
 #   (35, 35)  2.0
 ```
+
+Also check out `example.py`. Where you can run and modify the above example code. The library code can easily be extended for your own pleasure. Remember though that it is released under a MIT license!
 
